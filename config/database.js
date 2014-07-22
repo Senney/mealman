@@ -1,4 +1,4 @@
 
 module.exports = {
-    url: "mysql://username:password@localhost/mealman"
+    url: "mysql://mealman:5*Hotel@localhost/mealman"
 }
