@@ -7,6 +7,7 @@
  */
 
 module.exports = function(orm, db) {
+    var Ingredient = db.models.ingredient;
     var Recipe = db.define('recipe', {
         id: { type: 'serial', key: true },
         name: { type: 'text', required: true },
@@ -23,6 +24,5 @@ module.exports = function(orm, db) {
         }
     });
 
-    console.log(db.models)
-    //Recipe.hasMany('ingredient', db.models.ingredient, { required: false, reverse: 'receipe', key: true })
+    Recipe.hasMany('ingredients', Ingredient, {}, { required: false, reverse: 'recipes', key: true });
 };

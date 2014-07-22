@@ -5,6 +5,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser  = require('body-parser');
 var path        = require('path');
 
+var routes = require('../routes/index');
+var recipe = require('../routes/recipe');
+
 var models          = require("../models/")
 
 module.exports = function(app) {
@@ -20,6 +23,7 @@ module.exports = function(app) {
     app.use(express.static(path.join(__dirname, '../public')));
     app.use(express.static(path.join(__dirname, '../dist')));
 
+
     // Initialize our models.
     app.use(function(req, res, next) {
         models(function(err, db) {
@@ -31,6 +35,10 @@ module.exports = function(app) {
             return next();
         });
     });
+
+    // Route definition
+    app.use('/', routes);
+    app.use('/recipe', recipe);
 
     /// catch 404 and forward to error handler
     app.use(function(req, res, next) {
