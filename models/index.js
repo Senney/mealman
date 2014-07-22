@@ -5,8 +5,8 @@ var connection = null;
 
 /** Function to set up models. **/
 function setup(db, cb) {
-    require("./recipe")(orm, db);
     require("./ingredient")(orm, db);
+    require("./recipe")(orm, db);
     return cb(null, db);
 }
 

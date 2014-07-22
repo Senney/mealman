@@ -23,5 +23,6 @@ module.exports = function(orm, db) {
         }
     });
 
-    Recipe.hasMany('ingredients', db.models.ingredient, { required: false, reverse: 'receipe', key: true })
+    console.log(db.models)
+    //Recipe.hasMany('ingredient', db.models.ingredient, { required: false, reverse: 'receipe', key: true })
 };

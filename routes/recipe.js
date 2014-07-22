@@ -1,11 +1,14 @@
 var express = require('express')
 var router = express.Router()
 
+var recipe = require("../models/recipe")
+
+
 router.get('/', function(req, res) {
-    res.render('index', {title: 'recipe'});
+    // TODO: Recipes main page.
 });
 
-router.param('recipeid', /^\d+$/); // Recipes have an integer ID.
+// router.param('recipeid', /^\d+$/); // Recipes have an integer ID.
 router.get('/:recipeid', function(req, res) {
     // TODO: Handle echoing a recipe back to the user here.
 });
