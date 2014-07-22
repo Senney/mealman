@@ -3,7 +3,15 @@
 Mealman has the following software requirements:
 * Node.js
 * NPM
-* mongodb
+* mysql
+
+## Getting Started
+To get started, run the following commands from the project root:
+```
+npm install -g bower
+npm install
+bower install
+```
 
 ## Licence
 Copyright © 2014 Sean Heintz <sean.heintz@gmail.com>
